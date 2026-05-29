@@ -90,7 +90,11 @@ public class MSTSolver {
         return mst;
     }
 
-    public List<MSTEdge> prim(Graph graph, int startVertex) {
+    public List<MSTEdge> prim(Graph graph){
+        return prim(graph, 0);
+    }
+
+    private List<MSTEdge> prim(Graph graph, int startVertex) {
         List<MSTEdge> mst = new ArrayList<>();
         int vertices = graph.getVertexCount();
         int[][] matrix = graph.getAdjacencyMatrix();

@@ -16,9 +16,13 @@ public class DemoMST {
         graph.addEdge(3, 5, 3);
 
         MSTSolver solver = new MSTSolver();
+        System.out.println("***Algoritmo de prim***");
+        List<MSTSolver.MSTEdge> primResults = solver.prim(graph);
+        mostrarMst(primResults, labels);
+        System.out.println("***Algoritmo de Kruskal***");
         List<MSTSolver.MSTEdge> kruskalResult = solver.kruskal(graph);
-        mostrarMst(kruskalResult, labels);
-        // imprimir solver.prim(graph, 0) y solver.kruskal(graph)
+        mostrarMst(kruskalResult, labels);        
+
         }
 
     private static void mostrarMst(List<MSTSolver.MSTEdge> edges, String[] labels) {
